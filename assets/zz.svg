@@ -12,7 +12,7 @@
    viewBox="0 0 710.721 732.768"
    version="1.1"
    id="svg19"
-   sodipodi:docname="z.svg"
+   sodipodi:docname="zz.svg"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
   <metadata
      id="metadata23">
@@ -22,6 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
