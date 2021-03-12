@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:talks_beta/components/footer.dart';
+import 'package:talks_beta/core/databe_helper.dart';
+import 'package:talks_beta/models/record.dart';
+import 'package:talks_beta/pages/home_page.dart';
 
 class EditableRecordPage extends StatefulWidget {
   final String title;
@@ -155,16 +158,26 @@ class _EditableRecordPageState extends State<EditableRecordPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () async {
+                    final db = await DBHelper();
+                    var records = await db.getRecords();
+                    db
+                        .add(
+                          Record(
+                            title: _titleController.text,
+                            content: _textController.text,
+                            date: DateTime.now().toString(),
+                            id: records.length + 1,
+                          ),
+                        )
+                        .then(
+                          (value) => Navigator.of(context).pushAndRemoveUntil(
+                              MaterialPageRoute(builder: (_) => HomePage()),
+                              (route) => false),
+                        );
+                  },
                 ),
               ),
-              // Text(
-              //   'Quer aprender a desenvolver esse APP?',
-              //   style: GoogleFonts.roboto(
-              //     color: Colors.white,
-              //     fontSize: 16.0,
-              //   ),
-              // ),
               Footer()
             ],
           ),

@@ -131,7 +131,7 @@ class _NewRecordContentPageState extends State<NewRecordContentPage> {
                   right: MediaQuery.of(context).size.width * 0.12,
                 ),
                 child: TextField(
-                  controller: _textController,
+                  controller: _textController,  
                   textAlign: TextAlign.center,
                   maxLines: 5,
                   style: GoogleFonts.roboto(
@@ -141,7 +141,7 @@ class _NewRecordContentPageState extends State<NewRecordContentPage> {
                   ),
                   decoration: InputDecoration(
                     labelText: _recordButton.text,
-                    hintText: 'Grave o conteúdo do aúdio',
+                    hintText: 'Grave o conteúdo',
                     hintStyle: GoogleFonts.roboto(
                       fontSize: 18.0,
                       fontWeight: FontWeight.w500,
